@@ -1,3 +1,8 @@
+// ===========================================================================
+// BUILD (simulate + generic synth + Sky130 synth) -- from C:\digital-design-tools:
+//   scripts\run_flow.bat moore_101_fsm "rtl/fsm/moore/moore_101_fsm.v" "rtl/fsm/moore/tb_moore_101_fsm.v"
+// Outputs: sim\moore_101_fsm.*   build\moore_101_fsm_gates.*   build\moore_101_fsm_sky130.*
+// ===========================================================================
 `timescale 1ns/1ps
 // Moore "101" overlapping sequence detector (z = 1 one clock AFTER "101").
 // States: S0=- , S1="1", S2="10", S3="101".
@@ -22,3 +27,4 @@ module moore_101_fsm (
   // Moore: output = state only
   assign z = (state == S3);        
 endmodule
+

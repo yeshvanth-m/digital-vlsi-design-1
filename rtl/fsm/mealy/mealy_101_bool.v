@@ -1,4 +1,8 @@
 // ===========================================================================
+// BUILD (simulate + generic synth + Sky130 synth) -- from C:\digital-design-tools:
+//   scripts\run_flow.bat mealy_101_bool "rtl/fsm/mealy/mealy_101_bool.v" "rtl/fsm/mealy/tb_mealy_101_bool.v"
+// Outputs: sim\mealy_101_bool.*   build\mealy_101_bool_gates.*   build\mealy_101_bool_sky130.*
+// ===========================================================================
 // Mealy "101" sequence detector  -- boolean-equation coding style
 // ---------------------------------------------------------------------------
 // Same machine as mealy_101_fsm.v, written as boolean equations on the state

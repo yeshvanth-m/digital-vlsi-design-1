@@ -1,4 +1,8 @@
 // ===========================================================================
+// BUILD (simulate + generic synth + Sky130 synth) -- from C:\digital-design-tools:
+//   scripts\run_flow.bat moore_101_bool "rtl/fsm/moore/moore_101_bool.v" "rtl/fsm/moore/tb_moore_101_bool.v"
+// Outputs: sim\moore_101_bool.*   build\moore_101_bool_gates.*   build\moore_101_bool_sky130.*
+// ===========================================================================
 // Moore "101" sequence detector  -- boolean-equation coding style
 // ---------------------------------------------------------------------------
 // Same machine as moore_101_fsm.v, but the next-state and output logic are

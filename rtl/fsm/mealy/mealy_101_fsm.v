@@ -1,3 +1,8 @@
+// ===========================================================================
+// BUILD (simulate + generic synth + Sky130 synth) -- from C:\digital-design-tools:
+//   scripts\run_flow.bat mealy_101_fsm "rtl/fsm/mealy/mealy_101_fsm.v" "rtl/fsm/mealy/tb_mealy_101_fsm.v"
+// Outputs: sim\mealy_101_fsm.*   build\mealy_101_fsm_gates.*   build\mealy_101_fsm_sky130.*
+// ===========================================================================
 `timescale 1ns/1ps
 // Mealy "101" overlapping sequence detector (z = 1 SAME cycle as final '1').
 // States: S0=- , S1="1", S2="10".
