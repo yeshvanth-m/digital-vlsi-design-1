@@ -30,6 +30,23 @@ module tb_regfile;
   integer pass_count = 0, fail_count = 0;
 
   reg [DW-1:0] expected [0:DEPTH-1];
+  // Explicit memory taps so waveform viewers always show array contents.
+  wire [DW-1:0] mem_dbg00 = dut.mem[0];
+  wire [DW-1:0] mem_dbg01 = dut.mem[1];
+  wire [DW-1:0] mem_dbg02 = dut.mem[2];
+  wire [DW-1:0] mem_dbg03 = dut.mem[3];
+  wire [DW-1:0] mem_dbg04 = dut.mem[4];
+  wire [DW-1:0] mem_dbg05 = dut.mem[5];
+  wire [DW-1:0] mem_dbg06 = dut.mem[6];
+  wire [DW-1:0] mem_dbg07 = dut.mem[7];
+  wire [DW-1:0] mem_dbg08 = dut.mem[8];
+  wire [DW-1:0] mem_dbg09 = dut.mem[9];
+  wire [DW-1:0] mem_dbg10 = dut.mem[10];
+  wire [DW-1:0] mem_dbg11 = dut.mem[11];
+  wire [DW-1:0] mem_dbg12 = dut.mem[12];
+  wire [DW-1:0] mem_dbg13 = dut.mem[13];
+  wire [DW-1:0] mem_dbg14 = dut.mem[14];
+  wire [DW-1:0] mem_dbg15 = dut.mem[15];
 
   regfile #(.DW(DW), .AW(AW)) dut (
     .clk(clk), .we(we), .wa(wa), .ra0(ra0), .ra1(ra1),
@@ -56,6 +73,10 @@ module tb_regfile;
   initial begin
     $dumpfile("sim/regfile.vcd");
     $dumpvars(0, tb_regfile);
+    $dumpvars(0, mem_dbg00, mem_dbg01, mem_dbg02, mem_dbg03,
+                 mem_dbg04, mem_dbg05, mem_dbg06, mem_dbg07,
+                 mem_dbg08, mem_dbg09, mem_dbg10, mem_dbg11,
+                 mem_dbg12, mem_dbg13, mem_dbg14, mem_dbg15);
 
     we = 1'b0; wa = 0; ra0 = 0; ra1 = 0; wd = 0;
     @(posedge clk);

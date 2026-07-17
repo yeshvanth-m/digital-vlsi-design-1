@@ -29,6 +29,15 @@ module tb_sync_fifo;
 
   integer i;
   integer pass_count = 0, fail_count = 0;
+  // Explicit memory taps so waveform viewers always show array contents.
+  wire [DW-1:0] mem_dbg0 = dut.mem[0];
+  wire [DW-1:0] mem_dbg1 = dut.mem[1];
+  wire [DW-1:0] mem_dbg2 = dut.mem[2];
+  wire [DW-1:0] mem_dbg3 = dut.mem[3];
+  wire [DW-1:0] mem_dbg4 = dut.mem[4];
+  wire [DW-1:0] mem_dbg5 = dut.mem[5];
+  wire [DW-1:0] mem_dbg6 = dut.mem[6];
+  wire [DW-1:0] mem_dbg7 = dut.mem[7];
 
   sync_fifo #(.DW(DW), .AW(AW)) dut (
     .clk(clk), .rst_n(rst_n), .wr_en(wr_en), .rd_en(rd_en),
@@ -54,6 +63,8 @@ module tb_sync_fifo;
   initial begin
     $dumpfile("sim/sync_fifo.vcd");
     $dumpvars(0, tb_sync_fifo);
+    $dumpvars(0, mem_dbg0, mem_dbg1, mem_dbg2, mem_dbg3,
+                 mem_dbg4, mem_dbg5, mem_dbg6, mem_dbg7);
 
     rst_n = 1'b0; wr_en = 1'b0; rd_en = 1'b0; din = 0;
     @(posedge clk);
